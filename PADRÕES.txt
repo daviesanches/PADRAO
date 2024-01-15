@@ -33,14 +33,14 @@ TFT3Q-FB7BF-2Q8TG-G8GYW-799P4
 
 office 2019
 KDNJ9-G2MPB-HWJB4-DC6C2-DDCWD - ok
-NMMKJ-6RK4F-KMJVX-8D9MJ–6MWKP
+NMMKJ-6RK4F-KMJVX-8D9MJâ€“6MWKP
 W8W6K-3N7KK-PXB9H-8TD8W-BWTH9
 VQ9DP-NVHPH-T9HJC-J9PDT-KTQRG
 
 office 2021
 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH - ok
 
-NDXYY-BV6GK-KDDH6-YDFKH-B7YFX - Não ativa
+NDXYY-BV6GK-KDDH6-YDFKH-B7YFX - NÃ£o ativa
 RN2QX-FD4TJ-TKQ8H-DFF6X-T86WK
 3XK2C-GNMKC-83JQG-F49YT-XQD4X
 Q9XDT-NPJY2-VHDP3-YC2D8-9TRY9
@@ -73,7 +73,7 @@ remoto \\x.x.x.x -u administrator -p pc1234@@@ cmd.exe
 
 .................................................................
 
-Problema de msg de ativação office
+Problema de msg de ativaÃ§Ã£o office
 
 cd "\Program Files\Common Files\microsoft shared\ClickToRun"
 
