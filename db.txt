@@ -1,0 +1,47 @@
+irm https://massgrave.dev/get | iex
+
+iwr -useb https://christitus.com/win | iex
+..................................................
+
+cd c:\Program Files\Microsoft Office\Office16
+
+cscript ospp.vbs /dstatus
+
+cscript ospp.vbs /unpkey:xxxxx
+
+............................................
+alt + 92 => \
+alt + 47 => /
+.................................................
+
+https://releases.mozilla.org/pub/firefox/releases/51.0.1/win32/pt-BR/
+
+http://www.catalog.update.microsoft.com/search.aspx?q=4093753
+
+................................................
+
+remoto \\x.x.x.x -u administrator -p pc1234@@@ cmd.exe
+
+.................................................................
+
+Problema de msg de ativação office
+
+cd "\Program Files\Common Files\microsoft shared\ClickToRun"
+
+E depois
+
+OfficeC2rclient.exe /update user updatetoversion=16.0.13801.20266
+
+..................................................................
+
+igfxCPL.cpl
+
+..................................................................
+
+LOCAWEB - https://webmail.exchangecorp.com.br
+
+MICROSOFT - https://mail.exchange.microsoft.com
+
+..................................................................
+
+sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && sfc /scannow && shutdown -r -t 01
