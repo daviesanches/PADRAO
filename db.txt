@@ -1,3 +1,7 @@
+sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && sfc /scannow && shutdown -r -t 01
+
+.................................................
+
 irm https://massgrave.dev/get | iex
 
 iwr -useb https://christitus.com/win | iex
@@ -42,6 +46,4 @@ LOCAWEB - https://webmail.exchangecorp.com.br
 
 MICROSOFT - https://mail.exchange.microsoft.com
 
-..................................................................
 
-sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && sfc /scannow && shutdown -r -t 01
