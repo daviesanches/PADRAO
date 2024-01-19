@@ -7,6 +7,10 @@ irm https://massgrave.dev/get | iex
 iwr -useb https://christitus.com/win | iex
 ..................................................
 
+powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+
+..................................................
+
 cd c:\Program Files\Microsoft Office\Office16
 
 cscript ospp.vbs /dstatus
