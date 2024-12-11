@@ -50,4 +50,9 @@ LOCAWEB - https://webmail.exchangecorp.com.br
 
 MICROSOFT - https://mail.exchange.microsoft.com
 
+..................................................................
+Reset de fábrica UNIFI - Comando SSH
 
+syswrapper.sh restore-default
+
+...................................................................
