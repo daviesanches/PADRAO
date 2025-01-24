@@ -1,62 +1,41 @@
+REPARO
 sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && sfc /scannow && shutdown -r -t 01
-.................................................
-
-irm https://get.activated.win | iex
-
-iwr -useb https://christitus.com/win | iex
-..................................................
-
-powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-
-..................................................
-
+.................................................................
+ATIVAR win/office - irm https://get.activated.win | iex
+.................................................................
+INSTALAR PROGRAMAS - iwr -useb https://christitus.com/win | iex
+.................................................................
+DESEMPENHO MÁXIMO - powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+.................................................................
+REMOVER CHAVE OFFICE
 cd c:\Program Files\Microsoft Office\Office16
-
 cscript ospp.vbs /dstatus
-
 cscript ospp.vbs /unpkey:xxxxx
-
-............................................
+.................................................................
 alt + 92 => \
 alt + 47 => /
-.................................................
-
+..................................................................
 https://releases.mozilla.org/pub/firefox/releases/51.0.1/win32/pt-BR/
-
 http://www.catalog.update.microsoft.com/search.aspx?q=4093753
-
 ................................................
 remoto \\x.x.x.x -u administrator -p pc1234@@@ cmd.exe
 .................................................................
-Problema de msg de ativação office
-..................................
+PROBLEMA MSG ATIVAÇÃO OFFICE
 cd "\Program Files\Common Files\microsoft shared\ClickToRun"
-
 E depois
-
 OfficeC2rclient.exe /update user updatetoversion=16.0.13801.20266
 ..................................................................
-Painel de controle Não abre
-...........................
-igfxCPL.cpl
-
+PAINEL DE CONTROLE NÃO ABRE - igfxCPL.cpl
 ..................................................................
-
 LOCAWEB - https://webmail.exchangecorp.com.br
-
 MICROSOFT - https://mail.exchange.microsoft.com
-
 ..................................................................
 Reset de fábrica UNIFI - Comando SSH
-....................................
 syswrapper.sh restore-default
-
 ...................................................................
 Ativar W10 por linha de Comando
 ...............................
-cscript slmgr.vbs /ipk SERIAL
-
+cscript slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 cscript slmgr.vbs /skms kms.lotro.cc
-
 cscript slmgr.vbs /ato
 ...................................................................
