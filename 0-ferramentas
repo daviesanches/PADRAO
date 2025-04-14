@@ -1,7 +1,9 @@
 REPARO
 sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && sfc /scannow && shutdown -r -t 01
 .................................................................
-ATIVAR win/office - irm https://get.activated.win | iex
+ATIVAR win/office
+irm https://get.activated.win | iex
+irm https://massgrave.dev/get | iex
 .................................................................
 INSTALAR PROGRAMAS - iwr -useb https://christitus.com/win | iex
 .................................................................
