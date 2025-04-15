@@ -41,3 +41,9 @@ cscript slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 cscript slmgr.vbs /skms kms.lotro.cc
 cscript slmgr.vbs /ato
 ...................................................................
+Tentar Recrakear o CAD sem ter que reinstalar ele
+Parar o serviço Flexnet
+acessar a pasta (oculta)
+C:/ProgramData/FLEXnet
+apagar tudo de dentro
+...................................................................
