@@ -26,5 +26,7 @@ RDPW10 - https://mega.nz/folder/8d10kDLK#6SYasoKnPjg1OtTUDljy4g
 
 Sketchup 2021 + Vray 5 - https://mega.nz/folder/yHJwlAAC#qv9_mqIYKMJhLLTlb-uLZg
 
+WinScan2PDF - https://mega.nz/file/0JdXnBpZ#5wy5u4IsQIaFSD8jHvGQ8mBVX4WBMg9G9Btfym0rrfA
+
 WinTree - https://mega.nz/file/VVtg1KzI#5zTT-crZI_qUmPh2rfZeu5IA2wCowHAxOfuh0o4PSww
 
