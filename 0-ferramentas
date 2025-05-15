@@ -47,3 +47,13 @@ acessar a pasta (oculta)
 C:/ProgramData/FLEXnet
 apagar tudo de dentro
 ...................................................................
+OPENFIRE-SPARK
+
+Filtro de Mapeamento de Usuários: 
+(&(objectCategory=person)(objectClass=user)(memberOf=distinguishedName))
+
+Filtro de Mapeamento de Grupo: 
+(&(objectCategory=Group)(memberOf=distinguishedName))
+
+distinguishedName = Ver em ADSI EDIT / propriedades
+...................................................................
