@@ -14,6 +14,20 @@ cd c:\Program Files\Microsoft Office\Office16
 cscript ospp.vbs /dstatus
 cscript ospp.vbs /unpkey:xxxxx
 .................................................................
+@echo off   
+SET /P ANSWER=Ja desativou as atualizacao automatica do office? (Y/N)?
+if /i {%ANSWER%}=={y} (goto :yes)
+if /i {%ANSWER%}=={yes} (goto :yes)
+goto :no
+:yes
+cd "\Program Files\Common Files\microsoft shared\ClickToRun"
+OfficeC2rclient.exe /update user updatetoversion=16.0.13801.20266
+msg "%username%" Office sera re-instalado, aguarde aproximadamente 15 minutos!
+
+:no
+msg "%username%" Desative por favor as atualizacoees automaticas do office para resolver o problema da chave invalida!
+exit /b 1
+.................................................................
 alt + 92 => \
 alt + 47 => /
 ..................................................................
