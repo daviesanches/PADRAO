@@ -62,7 +62,6 @@ C:/ProgramData/FLEXnet
 apagar tudo de dentro
 ...................................................................
 OPENFIRE-SPARK
-
 Filtro de Mapeamento de Usuários: 
 (&(objectCategory=person)(objectClass=user)(memberOf=distinguishedName))
 
@@ -72,7 +71,6 @@ Filtro de Mapeamento de Grupo:
 distinguishedName = Ver em ADSI EDIT / propriedades
 ...................................................................
 Mudar MAC Interface MK
-
 /interface ethernet set ether2 mac-address=08:55:31:6E:AA:44
 .......................................................................
 ILO 4 - 325WC-J9QJ7-495NG-CP7WZ-7GJMM
@@ -82,6 +80,7 @@ cscript.exe c:\windows\system32\slmgr.vbs -upk
 cscript.exe c:\windows\system32\slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 cscript.exe c:\windows\system32\slmgr.vbs -ato
 .......................................................................
+Tunel SSH para acessar modem remotamente
 1 - Criar um user no MK Permissão Full
 2 - terminal do MK checar fowarding-enabled
 Checar configuração: /ip ssh print
