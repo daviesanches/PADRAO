@@ -82,3 +82,16 @@ cscript.exe c:\windows\system32\slmgr.vbs -upk
 cscript.exe c:\windows\system32\slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 cscript.exe c:\windows\system32\slmgr.vbs -ato
 .......................................................................
+1 - Criar um user no MK Permissão Full
+2 - terminal do MK checar fowarding-enabled
+Checar configuração: /ip ssh print
+Ativar: /ip ssh set forwarding-enabled=both
+Desativar: /ip ssh set forwarding-enabled=no
+3 - Abrir programa Putty
+4 - Conectar pelo IP do MK alvo (usar as credenciais temporarias criadas)
+Abrir Configurações connections/ssh/Tunnels
+SourcePort: 8080
+Destination: 192.168.1.1:80 (ip do modem e porta acesso web)
+clicar em add
+5 - navegador local, acessar o modem pelo url 
+http://localhost:8080/
