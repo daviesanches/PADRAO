@@ -95,3 +95,16 @@ clicar em add
 5 - navegador local, acessar o modem pelo url 
 http://localhost:8080/
 .......................................................................
+Atualizar Windows do AD
+Montar a ISO no windows
+acessar a pasta pelo CMD \Support\Adprep
+e rodar os comandos
+
+adprep.exe /forestprep /forest contoso.local
+adprep.exe /domainprep /domain contoso.local
+
+depois de terminar a atualização, executar o setup do instalador do proprio windows novo. 
+
+não pode ir direto para a ultima versão tem que ser escalonado.
+2008 -> 2012 -> 2012 R2 -> 2016 | server 2012 r2 para o 2019 da para ir direto
+.......................................................................
