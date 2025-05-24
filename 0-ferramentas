@@ -108,3 +108,94 @@ depois de terminar a atualização, executar o setup do instalador do proprio wi
 não pode ir direto para a ultima versão tem que ser escalonado.
 2008 -> 2012 -> 2012 R2 -> 2016 | server 2012 r2 para o 2019 da para ir direto
 .......................................................................
+AD Health check (VERIFICAR SAÚDE SERVER)
+
+@echo off
+for /f %%i in ('dsquery server -o rdn') do echo %%i && wmic /node:"%%i" /namespace:\\root\microsoftdfs path dfsrreplicatedfolderinfo WHERE replicatedfoldername='SYSVOL share' get replicationgroupname,replicatedfoldername,state
+echo.
+echo 0 = Uninitialized
+echo 1 = Initialized
+echo 2 = Initial Sync
+echo 3 = Auto Recovery
+echo 4 = Normal
+echo 5 = In Error
+pause
+.......................................................................
+MIGRAÇÃO AD
+
+1 - subir o novo server
+2 - VERIFICAR SAÚDE SERVER ANTIGO (EXECUTAR BAT) - resultado 4 (normal seguir procedimentos)
+3 - fixar ip apontando para o srv antigo 
+4 - ingressar no ad
+5 - instalar AD 
+6 - promover a controlador de domínio (não mudar nenhuma conf - manter tudo padrão)
+7 - inverter ips primários rota DNS para novo SRV AD 
+
+ex: 
+SRV NOVO (250)
+10.10.10.254 - dns primário (srv antigo)
+127.0.0.1 - dns secundário 
+
+SRV antigo (254)
+10.10.10.250 - dns primário (srv novo)
+127.0.0.1 - dns secundário 
+
+8 - verificar saúde novamente (BAT) - Aguardar resultado 4 (normal)
+9 - Checar compartilhamentos Sysvol e NEtlogon (\\ nome srv novo)
+10 - fazer transferencia FSMO (fazer comandos pelo novo server)
+
+C:\Users\Administrator>netdom query fsmo
+Schema master               VENUS.dominio.local (srv antigo)
+Domain naming master        VENUS.dominio.local (srv antigo)
+PDC                         VENUS.dominio.local (srv antigo)
+RID pool manager            VENUS.dominio.local (srv antigo)
+Infrastructure master       VENUS.dominio.local (srv antigo)
+The command completed successfully.
+
+C:\Users\Administrator>ntdsutil
+
+ntdsutil: roles
+
+fsmo maintenance: connections
+
+server connections: connect to server mercurio
+Binding to mercurio ...
+Connected to mercurio using credentials of locally logged on user.
+
+server connections: q
+
+fsmo maintenance: transfer rid master
+fsmo maintenance: transfer infrastructure master
+fsmo maintenance: transfer pdc
+fsmo maintenance: transfer schema master
+fsmo maintenance: transfer naming master
+
+fsmo maintenance: q
+
+ntdsutil: q
+
+C:\Users\Administrator>netdom query fsmo
+Schema master               mercurio.dominio.local (srv novo)
+Domain naming master        mercurio.dominio.local (srv novo)
+PDC                         mercurio.dominio.local (srv novo)
+RID pool manager            mercurio.dominio.local (srv novo)
+Infrastructure master       mercurio.dominio.local (srv novo)
+The command completed successfully.
+
+C:\Users\Administrator>
+
+exportar a conf do dhcp do srv antigo 
+
+Comando CMD
+netsh dhcp server export c:\dhcp.txt all
+
+Instalar DHCP SERVER caso não tenha instalado automaticamente com o AD
+
+importar no novo (colocar o arquivo no disco C:)
+netsh dhcp server import c:\dhcp.txt all
+
+ajustar os ips da placa de rede 
+
+apontamentos dns de todas as pastas verificar se estão apontadas para o servidor novo
+
+Remover AD (rules do SRV antigo) - Desprover
