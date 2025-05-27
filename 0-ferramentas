@@ -199,3 +199,15 @@ ajustar os ips da placa de rede
 apontamentos dns de todas as pastas verificar se estão apontadas para o servidor novo
 
 Remover AD (rules do SRV antigo) - Desprover
+.......................................................................
+Unidade Mapeada não aparece
+1 - Clique em Iniciar e depois Executar.
+2 - Digite regedit na caixa Inicial pesquisa e pressione Enter ou clique em cima do ícone exibido no painel.
+3- Localize e, em seguida, clique com o botão direito na seguinte subchave do registro:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+4 - No lado direito da tela clique com o botão direito do mouse no espaço em branco e aponte para novo e clique em Valor DWORD.
+5 - Digite EnableLinkedConnections e então pressione Enter.
+6 - EnableLinkedConnections com o botão direito e, em seguida, clique em Modificar.
+7 - Na caixa dados do valor , digite 1 e clique em OK.
+8- Saia do Editor do registro e reinicie o computador.
+.......................................................................
