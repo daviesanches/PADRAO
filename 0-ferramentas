@@ -5,7 +5,7 @@ ATIVAR win/office
 irm https://get.activated.win | iex
 irm https://massgrave.dev/get | iex
 .................................................................
-Pular Bypass w11 Shift f+ F10
+Pular Bypass w11 Shift + F10
 OOBE\BYPASSNRO
 .................................................................
 INSTALAR PROGRAMAS - iwr -useb https://christitus.com/win | iex
