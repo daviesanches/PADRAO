@@ -214,3 +214,19 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 7 - Na caixa dados do valor , digite 1 e clique em OK.
 8- Saia do Editor do registro e reinicie o computador.
 .......................................................................
+Certificado para VPN MK
+name: CA
+Common name: CA
+Days: 3650
+Key usage: crl sign / key cert sign
+assinar com o próprio ip do MK
+
+Server
+name: vpn.dominio.local
+Common name: vpn.dominio.local
+Days: 3650
+Key usage: digital signature / key enciphement / tls server
+assinar com o CA criado
+e clicar em trusted 
+
+Usar o server em ovpnserver e o CA, converter em txt e usar o cod criptografado dentro do arquivo ovpn
