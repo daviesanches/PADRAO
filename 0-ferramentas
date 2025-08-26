@@ -230,3 +230,7 @@ assinar com o CA criado
 e clicar em trusted 
 
 Usar o server em ovpnserver e o CA, converter em txt e usar o cod criptografado dentro do arquivo ovpn
+.......................................................................
+Servidores não aparecem no Hyper-V (PowerShell como admin)
+
+MOFCOMP %SYSTEMROOT%\System32\WindowsVirtualization.V2.mof
