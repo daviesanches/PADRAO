@@ -234,3 +234,9 @@ Usar o server em ovpnserver e o CA, converter em txt e usar o cod criptografado 
 Servidores não aparecem no Hyper-V (PowerShell como admin)
 
 MOFCOMP %SYSTEMROOT%\System32\WindowsVirtualization.V2.mof
+.......................................................................
+Erro estendido - Compartilhamento (PowerShell)
+
+Set-SmbClientConfiguration -RequireSecuritySignature $false
+Set-SmbClientCOnfiguration -EnableInsecureGuestLogons $true
+.......................................................................
