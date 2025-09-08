@@ -240,3 +240,27 @@ Erro estendido - Compartilhamento (PowerShell)
 Set-SmbClientConfiguration -RequireSecuritySignature $false
 Set-SmbClientCOnfiguration -EnableInsecureGuestLogons $true
 .......................................................................
+UsersAD.ps1 - Relatório Users AD(POwerShell)
+$relatorio = New-Object System.Data.DataTable
+$relatorio.Columns.Add("Usuario","string") | Out-Null
+$relatorio.Columns.Add("Login","string") | Out-Null
+$relatorio.Columns.Add("Grupo","string") | Out-Null
+
+$usuarios = Get-ADUser -Filter *
+
+foreach($usuario in $usuarios)
+{
+    $dn = (Get-ADUser $usuario).DistinguishedName
+    $grupos = Get-ADGroup -LDAPFilter ("(member:1.2.840.113556.1.4.1941:={0})" -f $dn) | Select -Expand Name
+    foreach($grupo in $grupos)
+    {
+        $linha = $relatorio.NewRow()
+        $linha.Usuario = $usuario.Name
+        $linha.Login = $usuario.samAccountName
+        $linha.Grupo = $grupo
+        $relatorio.Rows.Add($linha)
+    }
+}
+$relatorio | Sort Usuario | ft
+$relatorio | Export-Csv "UsersAD.csv" -NoTypeInformation
+.......................................................................
