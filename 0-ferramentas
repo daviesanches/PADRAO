@@ -264,3 +264,9 @@ foreach($usuario in $usuarios)
 $relatorio | Sort Usuario | ft
 $relatorio | Export-Csv "UsersAD.csv" -NoTypeInformation
 .......................................................................
+Excluir arquivos automaticamente por data (BAT)
+@echo off
+set "pasta=C:\MinhaPasta"
+
+forfiles /p "%pasta%" /s /m *.zip /d -7 /c "cmd /c del @file"
+.......................................................................
