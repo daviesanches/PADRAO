@@ -271,7 +271,7 @@ set "pasta=C:\MinhaPasta"
 forfiles /p "%pasta%" /s /m *.zip /d -7 /c "cmd /c del @file"
 .......................................................................
 Permissões Sharepoint (Power Shell)
-Install-Module SharePointPnPPowerShellOnline
+Install-Module SharePointPnPPowerShellOnline -Force
 
 # Instanciação segura da lista de resultados
 $script:Results = New-Object System.Collections.ArrayList
@@ -280,7 +280,7 @@ $script:Results = New-Object System.Collections.ArrayList
 $SiteURL = Read-Host "Digite a URL do site do SharePoint (ex: https://empresa.sharepoint.com/sites/MeuSite)"
 $ReportFile = "C:\Permissoes.csv"
 
-# Conectar (altere a forma de autenticação se necessário)
+# Conectar (vai pedir credenciais normalmente)
 Connect-PnPOnline -Url $SiteURL -Credentials (Get-Credential)
 
 # Detecta quais cmdlets estão disponíveis
@@ -328,10 +328,24 @@ foreach ($G in $Groups) {
         $null = $script:Results.Add($obj)
     } else {
         foreach ($m in $Members) {
-            $login = if ($m.LoginName) { $m.LoginName } elseif ($m.Email) { $m.Email } elseif ($m.Title) { $m.Title } else { "<unknown>" }
+            # Limpeza do LoginName
+            if ($m.LoginName) {
+                # Remove prefixos como "i:0#.f|membership|"
+                $login = $m.LoginName -replace '^i:0#.f\|membership\|', ''
+            }
+            elseif ($m.Email) {
+                $login = $m.Email
+            }
+            elseif ($m.Title) {
+                $login = $m.Title
+            }
+            else {
+                $login = "<unknown>"
+            }
+
             $tipo  = if ($m.PSObject.Properties['PrincipalType']) { $m.PrincipalType.ToString() } elseif ($m.PrincipalType -ne $null) { $m.PrincipalType.ToString() } else { "User" }
 
-            # Ignorar membros "Limited Access System Group" e "SharingLinks"
+            # Ignorar membros indesejados
             if ($login -match "Limited Access System Group" -or $login -match "SharingLinks") {
                 continue
             }
@@ -351,7 +365,7 @@ foreach ($G in $Groups) {
 # Exporta resultado para CSV
 if ($script:Results.Count -gt 0) {
     $script:Results |
-        Select-Object Grupo,Descricao,Proprietario,Membro,Tipo |
+        Select-Object Grupo,Membro |
         Export-Csv -Path $ReportFile -NoTypeInformation -Encoding UTF8
 
     Write-Host "Relatório gerado: $ReportFile" -ForegroundColor Green
