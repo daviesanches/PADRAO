@@ -270,3 +270,92 @@ set "pasta=C:\MinhaPasta"
 
 forfiles /p "%pasta%" /s /m *.zip /d -7 /c "cmd /c del @file"
 .......................................................................
+Permissões Sharepoit (Power Shell)
+Install-Module SharePointPnPPowerShellOnline
+
+# Instanciação segura da lista de resultados
+$script:Results = New-Object System.Collections.ArrayList
+
+# Config
+$SiteURL = "https://underlabzhn.sharepoint.com/sites/Dados/"
+$ReportFile = "C:\Permissoes.csv"
+
+# Conectar (altere a forma de autenticação se necessário)
+Connect-PnPOnline -Url $SiteURL -Credentials (Get-Credential)
+
+# Detecta quais cmdlets estão disponíveis
+$has_GetPnPGroupMember  = (Get-Command Get-PnPGroupMember -ErrorAction SilentlyContinue)  -ne $null
+$has_GetPnPGroupMembers = (Get-Command Get-PnPGroupMembers -ErrorAction SilentlyContinue) -ne $null
+
+Write-Host "Get-PnPGroupMember disponível? $has_GetPnPGroupMember"
+Write-Host "Get-PnPGroupMembers disponível? $has_GetPnPGroupMembers"
+
+# Pega todos os grupos do site
+$Groups = Get-PnPGroup
+
+foreach ($G in $Groups) {
+    # Ignorar grupos indesejados
+    if ($G.Title -match "Limited Access System Group" -or $G.Title -match "SharingLinks") {
+        Write-Host "Ignorando grupo: $($G.Title)" -ForegroundColor DarkGray
+        continue
+    }
+
+    Write-Host "Processando grupo: $($G.Title)" -ForegroundColor Cyan
+
+    try {
+        if ($has_GetPnPGroupMember) {
+            $Members = Get-PnPGroupMember -Group $G -ErrorAction Stop
+        } elseif ($has_GetPnPGroupMembers) {
+            $Members = Get-PnPGroupMembers -Identity $G.Title -ErrorAction Stop
+        } else {
+            $grp = Get-PnPGroup -Identity $G.Id -Includes Users,OwnerTitle,Description
+            Get-PnPProperty -ClientObject $grp -Property Users
+            $Members = $grp.Users
+        }
+    } catch {
+        Write-Warning "Não foi possível obter membros do grupo '$($G.Title)': $_"
+        $Members = @()
+    }
+
+    if (-not $Members -or $Members.Count -eq 0) {
+        $obj = [PSCustomObject]@{
+            Grupo        = $G.Title
+            Descricao    = $G.Description
+            Proprietario = $G.OwnerTitle
+            Membro       = "<Sem membros>"
+            Tipo         = "<N/A>"
+        }
+        $null = $script:Results.Add($obj)
+    } else {
+        foreach ($m in $Members) {
+            $login = if ($m.LoginName) { $m.LoginName } elseif ($m.Email) { $m.Email } elseif ($m.Title) { $m.Title } else { "<unknown>" }
+            $tipo  = if ($m.PSObject.Properties['PrincipalType']) { $m.PrincipalType.ToString() } elseif ($m.PrincipalType -ne $null) { $m.PrincipalType.ToString() } else { "User" }
+
+            # Ignorar membros "Limited Access System Group" e "SharingLinks"
+            if ($login -match "Limited Access System Group" -or $login -match "SharingLinks") {
+                continue
+            }
+
+            $obj = [PSCustomObject]@{
+                Grupo        = $G.Title
+                Descricao    = $G.Description
+                Proprietario = $G.OwnerTitle
+                Membro       = $login
+                Tipo         = $tipo
+            }
+            $null = $script:Results.Add($obj)
+        }
+    }
+}
+
+# Exporta resultado para CSV
+if ($script:Results.Count -gt 0) {
+    $script:Results |
+        Select-Object Grupo,Descricao,Proprietario,Membro,Tipo |
+        Export-Csv -Path $ReportFile -NoTypeInformation -Encoding UTF8
+
+    Write-Host "Relatório gerado: $ReportFile" -ForegroundColor Green
+} else {
+    Write-Host "Nenhum resultado encontrado." -ForegroundColor Yellow
+}
+.......................................................................
