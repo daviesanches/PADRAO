@@ -270,14 +270,14 @@ set "pasta=C:\MinhaPasta"
 
 forfiles /p "%pasta%" /s /m *.zip /d -7 /c "cmd /c del @file"
 .......................................................................
-Permissões Sharepoit (Power Shell)
+Permissões Sharepoint (Power Shell)
 Install-Module SharePointPnPPowerShellOnline
 
 # Instanciação segura da lista de resultados
 $script:Results = New-Object System.Collections.ArrayList
 
 # Config
-$SiteURL = "https://underlabzhn.sharepoint.com/sites/Dados/"
+$SiteURL = Read-Host "Digite a URL do site do SharePoint (ex: https://empresa.sharepoint.com/sites/MeuSite)"
 $ReportFile = "C:\Permissoes.csv"
 
 # Conectar (altere a forma de autenticação se necessário)
