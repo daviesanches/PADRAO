@@ -37,7 +37,7 @@ alt + 47 => /
 https://releases.mozilla.org/pub/firefox/releases/51.0.1/win32/pt-BR/
 http://www.catalog.update.microsoft.com/search.aspx?q=4093753
 ................................................
-remoto \\x.x.x.x -u administrator -p pc1234@@@ cmd.exe
+remoto \\x.x.x.x -u administrator -p senha cmd.exe
 .................................................................
 PROBLEMA MSG ATIVAÇÃO OFFICE
 cd "\Program Files\Common Files\microsoft shared\ClickToRun"
