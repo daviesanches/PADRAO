@@ -373,3 +373,6 @@ if ($script:Results.Count -gt 0) {
     Write-Host "Nenhum resultado encontrado." -ForegroundColor Yellow
 }
 .......................................................................
+Ver tipo de memória Servidor (CMD)
+wmic memorychip get banklabel, manufacturer, partnumber, speed, MemoryType, devicelocator
+.......................................................................
