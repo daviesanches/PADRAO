@@ -376,3 +376,13 @@ if ($script:Results.Count -gt 0) {
 Ver tipo de memória Servidor (CMD)
 wmic memorychip get banklabel, manufacturer, partnumber, speed, MemoryType, devicelocator
 .......................................................................
+Central Alarme Intelbras - Fechar curto SIRENE para reset pelo teclado. (30 segundos)
+<ENTER>1234 <ENTER>20001234<ENTER> (1234 para sair) - Reseta senha MASTER
+<ENTER>9090 <ENTER>20629090<ENTER> (9090 para sair) - Reseta senha INSTALADOR
+<ENTER>9090 <ENTER>2063878787<ENTER> (9090 para sair) - Reseta senha REMOTA
+
+Ligação TECLADO
+T1 - Verde
+T2 - Amarelo
+aux(-) - preto
+aux(+) - vermelho
