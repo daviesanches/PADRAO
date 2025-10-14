@@ -376,6 +376,31 @@ if ($script:Results.Count -gt 0) {
 Ver tipo de memória Servidor (CMD)
 wmic memorychip get banklabel, manufacturer, partnumber, speed, MemoryType, devicelocator
 .......................................................................
+Azure AD - Passo 1
+Set-ExecutionPolicy -ExecutionPolicy Bypass
+.......................................................................
+Azure AD - Passo 2
+#Disable pin requirement
+$path = "HKLM:\SOFTWARE\Policies\Microsoft"
+$key = "PassportForWork"
+$name = "Enabled"
+$value = "0"
+ 
+New-Item -Path $path -Name $key –Force
+ 
+New-ItemProperty -Path $path\$key -Name $name -Value $value -PropertyType DWORD -Force
+ 
+#Delete existing pins
+$passportFolder = "C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc"
+ 
+if(Test-Path -Path $passportFolder)
+{
+Takeown /f $passportFolder /r /d "Y"
+ICACLS $passportFolder /reset /T /C /L /Q
+ 
+Remove-Item –path $passportFolder –recurse -force
+}
+.......................................................................
 Central Alarme Intelbras - Fechar curto SIRENE para reset pelo teclado. (30 segundos)
 <ENTER>1234 <ENTER>20001234<ENTER> (1234 para sair) - Reseta senha MASTER
 <ENTER>9090 <ENTER>20629090<ENTER> (9090 para sair) - Reseta senha INSTALADOR
