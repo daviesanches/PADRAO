@@ -411,3 +411,9 @@ T1 - Verde
 T2 - Amarelo
 aux(-) - preto
 aux(+) - vermelho
+........................................................................
+VM travada Hyper-v Saved-critical (Power Shell)
+
+Get-VM
+Remove-VM -name [vm name] -force
+........................................................................
