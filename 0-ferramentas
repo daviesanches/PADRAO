@@ -52,11 +52,13 @@ MICROSOFT - https://mail.exchange.microsoft.com
 Reset de fábrica UNIFI - Comando SSH
 syswrapper.sh restore-default
 ...................................................................
-Ativar W10 por linha de Comando
+Ativar Windows por linha de Comando (cmd admin)
 ...............................
-cscript slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-cscript slmgr.vbs /skms kms.lotro.cc
-cscript slmgr.vbs /ato
+slmgr.vbs /upk     (remove a chave)
+slmgr.vbs /cpky     (limpa registro)
+slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX     (instala chave nova)
+slmgr.vbs /skms kms.lotro.cc       (apontando para um srv de ativação)
+slmgr.vbs /ato       (ativando a licença)
 ...................................................................
 Tentar Recrakear o CAD sem ter que reinstalar ele
 Parar o serviço Flexnet
@@ -77,11 +79,6 @@ Mudar MAC Interface MK
 /interface ethernet set ether2 mac-address=08:55:31:6E:AA:44
 .......................................................................
 ILO 4 - 325WC-J9QJ7-495NG-CP7WZ-7GJMM
-.......................................................................
-Ativar Server Manualmente
-cscript.exe c:\windows\system32\slmgr.vbs -upk
-cscript.exe c:\windows\system32\slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-cscript.exe c:\windows\system32\slmgr.vbs -ato
 .......................................................................
 Tunel SSH para acessar modem remotamente
 1 - Criar um user no MK Permissão Full
