@@ -14,6 +14,8 @@ Foxit Phanton (9.6.0.25114) (PDF Editor) - https://mega.nz/folder/4clwmRiY#LrqQC
 
 Limpeza Impressão - https://mega.nz/file/wYUHASAT#MATS2JkWyORa25VPof7rJL_xJ6W0jxbotx9E2qfm7Q8
 
+Logo BIOS - https://mega.nz/file/ZQl0ga7B#smWg1D88eL56VwdJppOdKAQha7waiKwtARqjbGmaq30
+
 MiniTool Partition Wizard - https://mega.nz/file/JIEFlK4K#ggYDMROsFfozcB5TEmldy2ylaasOmQaPsAw8dGfUbNY
 
 Perfil - https://mega.nz/folder/gJtFiRTB#Vsc3Dot_YX_3G3ICASEuHg
