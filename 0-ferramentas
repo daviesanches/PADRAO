@@ -414,3 +414,13 @@ VM travada Hyper-v Saved-critical (Power Shell)
 Get-VM
 Remove-VM -name [vm name] -force
 ........................................................................
+3CX - Gerar BKP e RESTAURAR
+Entrar na pasta pelo Putty
+cd /tmp/
+
+GERAR
+sudo -u phonesystem /usr/sbin/3CXBackupCmd --options=CH,FQDN,PROMPTS,FW,REC,VM --file="/var/lib/3cxpbx/Instance1/Data/Backups/Without-License.zip" --noemail
+
+RESTAURAR
+sudo -u phonesystem /usr/sbin/3CXRestoreCmd --file=/var/lib/3cxpbx/Instance1/Data/Backups/Without-License.zip --log=/tmp/restore_cmd.log
+........................................................................
