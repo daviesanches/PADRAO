@@ -414,7 +414,7 @@ VM travada Hyper-v Saved-critical (Power Shell)
 Get-VM
 Remove-VM -name [vm name] -force
 ........................................................................
-3CX - Gerar BKP e RESTAURAR
+3CX - Gerar BKP (sem a licença atual, com licença Acrescentar LIC em options) e RESTAURAR
 Entrar na pasta pelo Putty
 cd /tmp/
 
