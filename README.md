@@ -10,6 +10,8 @@ Corel Draw 2024 - https://mega.nz/folder/OWQi2bKT#CD7n9rOggHpKGpqlMkTvug
 
 DANFEView (2.7.3) - https://mega.nz/file/QdElXSiS#A6VSSHlfh7QvqY5kgJ5UQq3Ng4BkgaST4nXCsqghx18
 
+DELL - OpenManagement - https://mega.nz/folder/JdMlnK5T#BVl2Cx3Hdv17iywT-zy0eA
+
 Foxit Phanton (9.6.0.25114) (PDF Editor) - https://mega.nz/folder/4clwmRiY#LrqQCQFTJlvoPMdzokMDWw
 
 Limpeza Impressão - https://mega.nz/file/wYUHASAT#MATS2JkWyORa25VPof7rJL_xJ6W0jxbotx9E2qfm7Q8
