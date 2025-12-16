@@ -2,7 +2,11 @@ REPARO
 sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && sfc /scannow && shutdown -r -t 01
 .................................................................
 ATIVAR win/office
-irm https://get.activated.win | iex
+
+W10/11        -  irm https://get.activated.win | iex
+Opt2 W10/11 -  iex (curl.exe -s --doh-url https://1.1.1.1/dns-query https://get.activated.win | Out-String)
+W7            -  iex ((New-Object Net.WebClient).DownloadString('https://get.activated.win'))
+
 irm https://massgrave.dev/get | iex
 .................................................................
 Pular Bypass w11 Shift + F10
