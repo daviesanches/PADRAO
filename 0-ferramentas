@@ -431,3 +431,6 @@ sudo -u phonesystem /usr/sbin/3CXRestoreCmd --file=/var/lib/3cxpbx/Instance1/Dat
 Este Aplicativo foi Bloqueado para sua proteção
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /V EnableLUA /T REG_DWORD /D 0 /F
 ........................................................................
+Instalando UNIFI-Controler Linux Server (Ubuntu)
+https://community.ui.com/questions/UniFi-OS-Server-Installation-Scripts-or-UniFi-Network-Application-Installation-Scripts-or-UniFi-Eas/ccbc7530-dd61-40a7-82ec-22b17f027776
+........................................................................
