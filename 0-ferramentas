@@ -215,6 +215,8 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 7 - Na caixa dados do valor , digite 1 e clique em OK.
 8- Saia do Editor do registro e reinicie o computador.
 .......................................................................
+Configurando VPN no MK
+
 Certificado para VPN MK
 name: CA
 Common name: CA
@@ -231,6 +233,35 @@ assinar com o CA criado
 e clicar em trusted 
 
 Usar o server em ovpnserver e o CA, converter em txt e usar o cod criptografado dentro do arquivo ovpn
+
+Server
+
+/ip pool add comment="CUSTOM: VPN POOL" name=VPN ranges=10.216.255.1-10.216.255.253
+/ppp profile add comment="CUSTOM: VPN PROFILE" dns-server=10.216.0.1 local-address=10.216.255.254 name=VPN.dminio.LOCAL only-one=yes remote-address=VPN
+/interface ovpn-server server set auth=sha1 certificate=vpn.dominio.local cipher=aes256 default-profile=VPN.dominio.LOCAL enabled=yes
+/ip firewall address-list add address=10.216.255.0/24 comment="CUSTOM: VPN" list=VPN
+/ip firewall filter add action=accept chain=forward comment="CUSTOM: Accept from VPN to LAN" src-address-list=VPN
+/ip firewall filter add action=accept chain=input comment="CUSTOM: Accept OpenVPN Traffic" dst-port=1194 protocol=tcp
+/ip firewall nat add action=masquerade chain=srcnat comment="CUSTOM: Masquerade VPN to LAN" out-interface-list=LAN src-address-list=VPN
+/ppp secret add name=Wagner password=Ecos123%% profile=VPN.CLINICAECOS.LOCAL service=ovpn
+
+CLIENT
+
+/interface ovpn-client add cipher=aes256 connect-to=adegapio.ddns.app.br name=ESCRITORIO password="Adega123%%" use-peer-dns=no user=vpn.loja01
+/ip firewall address-list add address=10.224.255.0/24 list=VPN
+/ip firewall address-list add address=10.224.0.0/24 list=VPN
+/ip firewall filter add action=accept chain=forward comment="CUSTOM: Accept from VPN to LAN" src-address-list=VPN
+/ip firewall nat add action=masquerade chain=srcnat comment="CUSTOM: Masquerade VPN to LAN" out-interface-list=LAN src-address-list=VPN
+/ip route add check-gateway=ping distance=1 dst-address=10.224.0.0/24 gateway=ESCRITORIO
+
+ambos
+
+/ip firewall address-list add address=10.189.1.0/24 list=VPN
+/ip firewall address-list add address=10.189.2.0/24 list=VPN
+/ip firewall address-list add address=10.189.255.0/24 list=VPN
+/ip firewall filter add action=accept chain=forward comment="CUSTOM: Accept from VPN to LAN" src-address-list=VPN
+/ip firewall nat add action=masquerade chain=srcnat comment="CUSTOM: Masquerade VPN to LAN" out-interface-list=LAN src-address-list=VPN
+
 .......................................................................
 Servidores não aparecem no Hyper-V (PowerShell como admin)
 
