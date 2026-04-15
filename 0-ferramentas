@@ -433,6 +433,9 @@ ICACLS $passportFolder /reset /T /C /L /Q
 Remove-Item –path $passportFolder –recurse -force
 }
 .......................................................................
+Colocar conta como adm local Azure AD
+net localgroup administradores "EntraID\conta@microsoft.com" /add
+.......................................................................
 Central Alarme Intelbras - Fechar curto SIRENE para reset pelo teclado. (30 segundos)
 <ENTER>1234 <ENTER>20001234<ENTER> (1234 para sair) - Reseta senha MASTER
 <ENTER>9090 <ENTER>20629090<ENTER> (9090 para sair) - Reseta senha INSTALADOR
