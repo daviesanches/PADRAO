@@ -468,3 +468,7 @@ REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /V Enable
 Instalando UNIFI-Controler Linux Server (Ubuntu)
 https://community.ui.com/questions/UniFi-OS-Server-Installation-Scripts-or-UniFi-Network-Application-Installation-Scripts-or-UniFi-Eas/ccbc7530-dd61-40a7-82ec-22b17f027776
 ........................................................................
+disable device-mode Mikrotik 7
+/system/device-mode/update mode=advanced
+........................................................................
+ 
