@@ -471,4 +471,8 @@ https://community.ui.com/questions/UniFi-OS-Server-Installation-Scripts-or-UniFi
 disable device-mode Mikrotik 7
 /system/device-mode/update mode=advanced
 ........................................................................
- 
+OpenVPN VPN quando ativado muda gateway local e a navegação para de funcionar
+Esse comando desativa a mudança para gateway da VPN Colocar no arquivo .OVPN
+route-nopull
+........................................................................
+
