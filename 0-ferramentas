@@ -478,4 +478,6 @@ route-nopull
 WhatsApp para windows
 https://whatsapp-desktop.br.uptodown.com/windows/download
 ........................................................................
-
+Colocar conta entra ID como adm local
+net localgroup administradores AzureAD\conta@dominio /add
+........................................................................
