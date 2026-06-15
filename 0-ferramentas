@@ -482,3 +482,7 @@ https://whatsapp-desktop.br.uptodown.com/windows/download
 Colocar conta entra ID como adm local
 net localgroup administradores AzureAD\conta@dominio /add
 ........................................................................
+Limpar completamente o cache do Acesso Rápido
+%AppData%\Microsoft\Windows\Recent\AutomaticDestinations
+%AppData%\Microsoft\Windows\Recent\CustomDestinations
+........................................................................
