@@ -486,3 +486,20 @@ Limpar completamente o cache do Acesso Rápido
 %AppData%\Microsoft\Windows\Recent\AutomaticDestinations
 %AppData%\Microsoft\Windows\Recent\CustomDestinations
 ........................................................................
+Comando ROBOCOPY para copiar pelo CMD
+
+robocopy "G:\Dados" "E:\Dados" /E /COPYALL /DCOPY:T /R:3 /W:5 /MT:16 /TEE /LOG:C:\Temp\Robocopy_Dados.log
+
+Explicação:
+"G:\Dados" → Pasta de origem.
+"E:\Dados" → Pasta de destino.
+/E → Copia todas as subpastas, inclusive as vazias.
+/COPYALL → cópia das permissões
+/DCOPY:T → Preserva a data/hora das pastas.
+/R:3 → Tenta novamente 3 vezes em caso de erro.
+/W:5 → Aguarda 5 segundos entre as tentativas.
+/MT:16 → Utiliza 16 threads para acelerar a cópia (ajuste conforme o desempenho do servidor).
+/V → Modo detalhado.
+/TEE → Exibe o progresso na tela e grava no log.
+/LOG:C:\Temp\Robocopy_Dados.log → Salva o log da operação.
+........................................................................
