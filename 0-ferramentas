@@ -70,14 +70,17 @@ acessar a pasta (oculta)
 C:/ProgramData/FLEXnet
 apagar tudo de dentro
 ...................................................................
-OPENFIRE-SPARK
+OPENFIRE-SPARK (Criar UM Grupo OPENFIRE e colocar os usuáros dentro desse grupo que vão usar o spark)
+Configuração LDAP
+
+distinguishedName = Ver em ADSI EDIT / propriedades (grupo criado)
+
 Filtro de Mapeamento de Usuários: 
 (&(objectCategory=person)(objectClass=user)(memberOf=distinguishedName))
 
+Grupo GP_OPENFIRE (colocar os grupos (setores) caso queira grupos separados)
 Filtro de Mapeamento de Grupo: 
 (&(objectCategory=Group)(memberOf=distinguishedName))
-
-distinguishedName = Ver em ADSI EDIT / propriedades
 ...................................................................
 Mudar MAC Interface MK
 /interface ethernet set ether2 mac-address=08:55:31:6E:AA:44
