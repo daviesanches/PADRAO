@@ -2,7 +2,6 @@ REPARO
 sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && sfc /scannow && shutdown -r -t 01
 .................................................................
 Desempenho
-
 irm "https://winscript.cc/irm" | iex
 .................................................................
 ATIVAR win/office
