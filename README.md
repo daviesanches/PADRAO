@@ -28,6 +28,8 @@ Recuperar Arquivos - https://mega.nz/folder/OXJTnQAB#keIVaz2gKXFb6_BbdxRhag
 
 RDPW10 - https://mega.nz/folder/8d10kDLK#6SYasoKnPjg1OtTUDljy4g
 
+Serato DJ PRO - https://mega.nz/file/3bJxSADY#tpxoQwsXkDlchxgOrYHJ_MF8Dm1siwuoodbfVLpZWjo
+
 Sketchup 2021 + Vray 5 - https://mega.nz/folder/yHJwlAAC#qv9_mqIYKMJhLLTlb-uLZg
 
 WinScan2PDF - https://mega.nz/file/0JdXnBpZ#5wy5u4IsQIaFSD8jHvGQ8mBVX4WBMg9G9Btfym0rrfA
