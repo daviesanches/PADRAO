@@ -8,6 +8,8 @@ AutoCad 2021 - https://mega.nz/folder/pMVTDSQI#Cjy6dhW3y4IgPsqH8kSk9Q
 
 Corel Draw 2024 - https://mega.nz/folder/OWQi2bKT#CD7n9rOggHpKGpqlMkTvug
 
+Corel Draw 2026 - https://mega.nz/folder/qHQBnDqS#6iIyNcKGY6RO1er_B-BhjQ
+
 DANFEView (2.7.3) - https://mega.nz/file/QdElXSiS#A6VSSHlfh7QvqY5kgJ5UQq3Ng4BkgaST4nXCsqghx18
 
 DELL - OpenManagement - https://mega.nz/folder/JdMlnK5T#BVl2Cx3Hdv17iywT-zy0eA
