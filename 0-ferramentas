@@ -512,3 +512,22 @@ Explicação:
 /TEE → Exibe o progresso na tela e grava no log.
 /LOG:C:\Temp\Robocopy_Dados.log → Salva o log da operação.
 ........................................................................
+Instalando Certificados Digitais CA em lote (Criar o BAT)
+
+@echo off
+set PASTA=C:\Certificados
+
+for %%f in ("%PASTA%\*.cer") do (
+    echo Instalando %%~nxf
+    certutil -addstore CA "%%f"
+)
+
+for %%f in ("%PASTA%\*.crt") do (
+    echo Instalando %%~nxf
+    certutil -addstore CA "%%f"
+)
+
+echo.
+echo Concluido.
+pause
+........................................................................
