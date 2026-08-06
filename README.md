@@ -32,6 +32,8 @@ RDPW10 - https://mega.nz/folder/8d10kDLK#6SYasoKnPjg1OtTUDljy4g
 
 Serato DJ PRO - https://mega.nz/file/3bJxSADY#tpxoQwsXkDlchxgOrYHJ_MF8Dm1siwuoodbfVLpZWjo
 
+SMS PowerView - https://mega.nz/folder/raJFxI6Z#c-CpeF5Zseu2oF0tmZ57lA
+
 Sketchup 2021 + Vray 5 - https://mega.nz/folder/yHJwlAAC#qv9_mqIYKMJhLLTlb-uLZg
 
 WinScan2PDF - https://mega.nz/file/0JdXnBpZ#5wy5u4IsQIaFSD8jHvGQ8mBVX4WBMg9G9Btfym0rrfA
