@@ -278,6 +278,10 @@ Erro estendido - Compartilhamento (PowerShell)
 Set-SmbClientConfiguration -RequireSecuritySignature $false
 Set-SmbClientCOnfiguration -EnableInsecureGuestLogons $true
 .......................................................................
+Relatório de Usuários e Grupos do AD (PowerShell adm)
+
+Get-ADUser -Filter {Enabled -eq $true} -Properties Name, SamAccountName, MemberOf | Select-Object Name, SamAccountName, @{N='Grupos/Acessos';E={($_.MemberOf | Get-ADGroup | Select-Object -ExpandProperty Name) -join '; '}} | Export-Csv -Path "C:\Usuarios_Ativos_Acessos.csv" -NoTypeInformation -Encoding UTF8
+.......................................................................
 UsersAD.ps1 - Relatório Users AD(POwerShell)
 $relatorio = New-Object System.Data.DataTable
 $relatorio.Columns.Add("Usuario","string") | Out-Null
