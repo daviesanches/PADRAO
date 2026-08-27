@@ -535,3 +535,9 @@ echo.
 echo Concluido.
 pause
 ........................................................................
+Comando RUNAS pelo PowerShell 
+
+Start-Process "C:\ CAMINHO COMPLETO do .exe" -Credential ".\administrador"
+
+SE DER ERRO USUARIO COLOCAR "NOME-DA-MAQUINA\ADMINISTRADOR"
+........................................................................
