@@ -440,7 +440,7 @@ ICACLS $passportFolder /reset /T /C /L /Q
 Remove-Item –path $passportFolder –recurse -force
 }
 .......................................................................
-Colocar conta como adm local Azure AD
+Colocar conta como adm local Azure AD ( EntraID  ou AzureAD ) tentar um ou outro
 net localgroup administradores "EntraID\conta@microsoft.com" /add
 .......................................................................
 Forçar Resincronismo no Entra ID (se a conta estiver configurada no windows, EXCLUIR, e rodar comando no power Shell para recolocar a conta)
